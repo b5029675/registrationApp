@@ -34,6 +34,6 @@ def profile(request):
             return redirect('profile')
     else:
         u_form = UserUpdateForm(instance = request.user)
-        s_form = StudentUpdateForm(instance = request.user.profile)
+        s_form = StudentUpdateForm(instance = request.user.student)
         context = {'u_form': u_form, 's_form': s_form, 'title': 'Student Profile'}
         return render(request, 'users/profile.html', context)
