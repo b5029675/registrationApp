@@ -11,3 +11,6 @@ def about(request):
 
 def contact(request):
     return render(request, 'itreporting/contact.html', {'title':'Contact'})
+
+def contact(request):
+    return render(request, 'itreporting/module.html', {'title':'Module'})
