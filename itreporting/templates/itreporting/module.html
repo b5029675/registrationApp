@@ -1,5 +1,10 @@
 {% extends "itreporting/base.html" %}
 {% block content %}
-<body>
-    <h1> Home page for Module Registration </h1>
+{% for module in modules %}
+<h3>{{ issue }}</h3>
+<h4>Reported by {{ module.coursesAllowed }} on {{ issue.date_submitte
+}}</h4>
+<p>{{ issue.details }}</p>
+<hr>
+{% endfor %}
 {% endblock content %}

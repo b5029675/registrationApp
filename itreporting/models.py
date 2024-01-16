@@ -1,8 +1,10 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
+from django.contrib.auth.models import Group
 
 # Create your models here.
+
 
 class Course(models.Model):
     name = models.TextField()
@@ -11,9 +13,9 @@ class Course(models.Model):
         return f'{self.name}'
 
 class Module(models.Model):
-    name = models.CharField(max_length = 15, primary_key = "name")
+    name = models.CharField(max_length = 50, primary_key = "name")
     code = models.CharField(max_length = 9)
-    credit = models.IntegerField(max_length = 2, choices = [('20', '20'), ('40', '40'), ('60', '60')])
+    credit = models.IntegerField(choices = [(20, '20'), (40, '40'), (60, '60')])
     category = models.TextField(max_length = 10, choices = [('Compulsory', 'Compulsory'), ('Elective', 'Elective')])
     description = models.TextField(max_length = 50)
     availability = models.BooleanField(default = True)

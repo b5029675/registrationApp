@@ -1,5 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.db import models
+from itreporting.models import Course
 
 # Create your models here.
 
@@ -10,6 +12,7 @@ class Student(models.Model):
     address = models.CharField(max_length = 20 ,null = True)
     citytown = models.CharField(max_length = 20 ,null = True)
     country = models.CharField(max_length = 20 ,null = True)
+    stuCourse = models.OneToOneField(Course, null = True, on_delete = models.SET_NULL)
 
 
     def __str__(self):
