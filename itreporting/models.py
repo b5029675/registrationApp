@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.utils import timezone
 
 # Create your models here.
 
@@ -15,10 +16,16 @@ class Module(models.Model):
     availability = models.BooleanField(default = True)
     coursesAllowed = models.ManyToManyField(Course)
 
+class Registration(models.Model):
+    user = models.OneToOneField(User, null = True, on_delete = models.CASCADE)
+    module = models.OneToOneField(Module)
+    dateRegistered = models.DateTimeField(default = timezone.now)
 
-    room = models.CharField(max_length = 100)
-    details = models.TextField()
-    date_submitted = models.DateTimeField(default = timezone.now)
-    availabile = models.BooleanField(default = True)
-    elCourses = models.CharField(max_length = 100 , choices =
-    [('Hardware', 'Hardware'), ('Software', 'Software')])
+
+
+    #room = models.CharField(max_length = 100)
+    #details = models.TextField()
+    #date_submitted = models.DateTimeField(default = timezone.now)
+    #availabile = models.BooleanField(default = True)
+    #elCourses = models.CharField(max_length = 100 , choices =
+    #[('Hardware', 'Hardware'), ('Software', 'Software')])
