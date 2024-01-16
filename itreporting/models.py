@@ -24,7 +24,7 @@ class Module(models.Model):
     
 class Registration(models.Model):
     user = models.OneToOneField(User, null = True, on_delete = models.CASCADE)
-    module = models.OneToOneField(Module)
+    module = models.OneToOneField(Module, null = True, on_delete = models.CASCADE)
     dateRegistered = models.DateTimeField(default = timezone.now)
     
     def __str__(self):
