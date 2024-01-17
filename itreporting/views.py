@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Module
+from .models import Course
 from django.contrib.auth.models import User
 
 
@@ -17,6 +17,6 @@ def contact(request):
     #else:
          #return render(request, 'itreporting/home.html', {'title':'Home'})
 
-def module(request):
-    modules = {'modules': Module.objects.all(), 'title': 'Modules'}
-    return render(request, 'itreporting/module.html', modules)
+def course(request):
+    courses = {'courses': Course.objects.all(), 'title': 'Courses'}
+    return render(request, 'itreporting/course.html', courses)
