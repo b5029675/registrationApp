@@ -28,6 +28,7 @@
                         <a class="nav-item nav-link" href="{% url 'itreporting:home' %}">Home</a>
                         <a class="nav-item nav-link" href="{% url 'itreporting:about' %}">About</a>
                         <a class="nav-item nav-link" href="{% url 'itreporting:course' %}">Courses</a>
+                        <a class="nav-item nav-link" href="{% url 'itreporting:module' %}">Modules</a>
                         <a class="nav-item nav-link" href="{% url 'itreporting:contact' %}">Contact</a>
                     </div>
                     <!-- Navbar Right Side -->
@@ -44,6 +45,7 @@
                 </div>
             </nav>
         </header>
+        
         <div class="row">
             <div class="col-md-8">
                 {% if messages %}

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Course
+from .models import Course, Module
 from django.contrib.auth.models import User
 
 
@@ -20,3 +20,7 @@ def contact(request):
 def course(request):
     courses = {'courses': Course.objects.all(), 'title': 'Courses'}
     return render(request, 'itreporting/course.html', courses)
+
+def module(request):
+    modules = {'modules': Module.objects.all(), 'title': 'Modules'}
+    return render(request, 'itreporting/module.html', modules)

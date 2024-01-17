@@ -1,0 +1,12 @@
+{% extends "itreporting/base.html" %}
+{% block content %}
+{% for module in modules %}
+
+<article class="media content-section">
+    <div class="media-body">
+        <h2><a class="article-title" href="#">{{ module.name }} ({{ module.code }})</a></h2>
+        <p class="article-content">Credit: {{ module.credit }}</p>
+    </div>
+</article>
+{% endfor %}
+{% endblock content %}
